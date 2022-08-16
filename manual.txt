@@ -76,6 +76,15 @@ earlier. If your PC runs Windows 7 or earlier, tough sh*t.
 former is  bundled  with  Python 3,  but  the latter  two have  to  be installed
 manually.
 
+    In the "fonts" folder  are the fonts used  by the program.  For Linux users,
+please install only these fonts:
+
+  - FOT-RodinNTLGPro-EB.otf
+  - rodinpro-db_bigfontsite.com.otf
+  - jgs5.ttf
+
+    For Windows users, just install all of 'em.
+
  Introduction to text mode art/ASCII art
  =======================================
  
@@ -95,6 +104,8 @@ high resolution modes for  displaying pixel art with  varying degrees of colour,
 and often a text mode for  displaying uniform tiles of  text characters in units
 of one  character,  one foreground  colour and one  background colour.  This was
 beneficial because it required less RAM to display large, colourful graphics.
+
+_ Why? And how? ________________________________________________________________
 
     Let  me show  you how text  mode actually  works,  in  case you  still don't
 understand. We'll start with the text mode on the CGA:
@@ -134,10 +145,15 @@ understand. We'll start with the text mode on the CGA:
   +--------------------------------------------------------------------------+
 
     In a nutshell, text mode art is a general term for tile art which is:
+
   - Created from a fixed two colour tileset (usually a 1-bit font)
   - On a uniform grid
   - With at most a single foreground and background colour per character
 
-
-
-
+                          __
+|  |     '               |  \         '
+|  | /"\ | |/"|  /"|     |__/ /"\ |/" | /"\
+|  | '-. | |  | |  |     |  \ | | |   | '-.
+ \_| \_/ \ |  |  \_|     |__/ \_/ |   \ \_/
+================== | ======================
+                '--'

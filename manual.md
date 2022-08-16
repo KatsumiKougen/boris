@@ -57,15 +57,25 @@ If you already have Python 3.10 installed, you're good to go. If not, go install
 
 *Boris* uses these following libraries: *tkinter*, *clipboard*, and *Pillow*. The former is bundled with Python 3, but the latter two have to be installed manually.
 
+In the [`fonts`](./fonts) folder are the fonts used by the program. For Linux users, please install only these fonts:
+
+* FOT-RodinNTLGPro-EB.otf
+* rodinpro-db_bigfontsite.com.otf
+* jgs5.ttf
+
+For Windows users, just install all of 'em.
+
 ## Introduction to text mode art/ASCII art
 
-### [What the f\*ck is a "textmode"?](https://www.youtube.com/watch?v=ZB0fDrpmKTg)
+### [What the f\*ck is a "text mode art"?](https://www.youtube.com/watch?v=ZB0fDrpmKTg)
 
 Text mode art is a broad term for art made with a monospaced font on a uniform grid. The term arose from a need to categorise art that didn't use a specific specification.
 
 In the same way that "tile art" encapsulates pixelart, mosaic, sprite art, "text mode art" covers a great many different subcategories. Textmode encapsulates art like ASCII (not [AZKi](https://www.youtube.com/channel/UC0TXe_LYZ4scaW2XMyi5_kw)), ANSI, PETSCII and many others which have their own specific restrictions.
 
 Old computers used to have various modes for displaying graphics — with high resolution modes for displaying pixel art with varying degrees of colour, and often a text mode for displaying uniform tiles of text characters in units of one character, one foreground colour and one background colour. This was beneficial because it required less RAM to display large, colourful graphics.<sup>`[1]`</sup>
+
+### Why? And how?
 
 Let me show you how text mode actually works, in case you still don't understand. We'll start with the text mode on the CGA:
 
@@ -92,3 +102,23 @@ In a nutshell, text mode art is a general term for tile art which is:
 >
 > * `[1]` ["*What is textmode?*" — Polyducks](http://polyducks.co.uk/what-is-textmode/)
 > * `[2]` ["How I got Mario in That Editor — And how Norton got 🐁" — ](https://www.youtube.com/watch?v=7nlNQcKsj74)[Joel "Bisqwit" Yliluoma](https://bisqwit.iki.fi)
+
+# Using Boris
+
+To launch Boris from the command line, enter either of these commands:
+
+```bash
+python3 boris.py
+```
+
+```
+./boris.py
+```
+
+This is for Linux users. Windows users surely know how to launch the program.
+
+## Main window
+
+The main window looks like this:
+
+![](./img/Boris-MainWindow.png)
