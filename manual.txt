@@ -157,3 +157,228 @@ understand. We'll start with the text mode on the CGA:
  \_| \_/ \ |  |  \_|     |__/ \_/ |   \ \_/
 ================== | ======================
                 '--'
+
+    To launch Boris from the command line, enter either of these commands:
+
+ ______________________________________________________________________________
+|CaramelldansenTerminal___________________________________________(O)(O)(OA-OA)|
+|Katsumi@allspark:~/boris $ python3 boris.py                                   |
+'------------------------------------------------------------------------------'
+ ______________________________________________________________________________
+|CaramelldansenTerminal___________________________________________(O)(O)(OA-OA)|
+|Katsumi@allspark:~/boris $ ./boris.py                                         |
+'------------------------------------------------------------------------------'
+
+    This is  for Linux  users.  Windows  users  surely  know  how to launch  the
+program.
+
+ Main window
+ ===========
+
+    The main window looks like this:
+
+ ______________________________________________________________________________
+|Boris by Katsumi_________________________________________________(O)(O)(OA-OA)|
+|File|Edit|Tools|Help|_________________________________________________________|
+|+-------------------------------------------------------+                     |
+||                                                       |  |"""|        '     |
+||                                                       |  |--|  |"| |" | |"  |
+||                                                       |  |___| |_| |  | _|  |
+||                                                       |                     |
+||                                                       |     version  0.1    |
+||                                                       |      by Katsumi     |
+||                                                       |                     |
+||                                                       |         Type        |
+||                                                       |  /___ something     |
+||                                                       |  \      here        |
+||                                                       |      View your      |
+||                                                       |       artwork       |
+||                                                       |        here         |
+||                                                       |          |          |
+||                                                       |         \|/         |
+||                                                       |                     |
+||                                                       |      [Preview]      |
+||                                                       |      [Palette]      |
+||                                                       |       [Save]        |
+||                                                       |       [Load]        |
+||                                                       |                     |
+|+-------------------------------------------------------+                     |
+| Ln 1, Col 1                                                                  |
+'------------------------------------------------------------------------------'
+
+    On the left,  we have a  60×25-character textbox.  The textbox  is where you
+type down your work  and add the  "tags" to  certain parts  of the text.  On the
+right,  we have (from top to bottom)  the program's wordmark,  a text that tells
+you where things are, and four buttons: Preview, Palette, Save and Load.
+
+    On the bottom is a  text that reads  "Ln ..., Col ...".  This text indicates
+the current position  of the cursor.  So if  the cursor  is located  in line 69,
+character 420, the text changes to "Ln 69, Col 420".
+
+    There's a menu  bar containing several  basic commands like  opening a file,
+copying some text, changing foreground and background colour, etc.
+
+ Creating your first text mode artwork
+ =====================================
+
+_ First things first ___________________________________________________________
+
+    Let's start by typing some text. I'll go with this one:  "I'm really feeling
+it!
+
+ ______________________________________________________________________________
+|Boris by Katsumi_________________________________________________(O)(O)(OA-OA)|
+|File|Edit|Tools|Help|_________________________________________________________|
+|+-------------------------------------------------------+                     |
+||I'm really feeling it!                                 |  |"""|        '     |
+||                                                       |  |--|  |"| |" | |"  |
+||                                                       |  |___| |_| |  | _|  |
+||                                                       |                     |
+||                                                       |     version  0.1    |
+||                                                       |      by Katsumi     |
+||                                                       |                     |
+||                                                       |         Type        |
+||                                                       |  /___ something     |
+||                                                       |  \      here        |
+||                                                       |      View your      |
+||                                                       |       artwork       |
+||                                                       |        here         |
+||                                                       |          |          |
+||                                                       |         \|/         |
+||                                                       |                     |
+||                                                       |      [Preview]      |
+||                                                       |      [Palette]      |
+||                                                       |       [Save]        |
+||                                                       |       [Load]        |
+||                                                       |                     |
+|+-------------------------------------------------------+                     |
+| Ln 1, Col 1                                                                  |
+'------------------------------------------------------------------------------'
+
+    Once we click Preview, we get this result:
+
+                --> eog ./img/manual/FirstPicture-output.png <--
+
+    It looks  fairly impressive.  But there's no colours yet.  Looks like we'll
+have to add some colour tags, which is my favourite part.
+
+ ______________________________________________________________________________
+|Boris by Katsumi_________________________________________________(O)(O)(OA-OA)|
+|File|Edit|Tools|Help|_________________________________________________________|
+|+-------------------------------------------------------+                     |
+||[f0]I'm[0f] [1f]really [b4]feeling [f9]it!             |  |"""|        '     |
+||                                                       |  |--|  |"| |" | |"  |
+||                                                       |  |___| |_| |  | _|  |
+||                                                       |                     |
+||                                                       |     version  0.1    |
+||                                                       |      by Katsumi     |
+||                                                       |                     |
+||                                                       |         Type        |
+||                                                       |  /___ something     |
+||                                                       |  \      here        |
+||                                                       |      View your      |
+||                                                       |       artwork       |
+||                                                       |        here         |
+||                                                       |          |          |
+||                                                       |         \|/         |
+||                                                       |                     |
+||                                                       |      [Preview]      |
+||                                                       |      [Palette]      |
+||                                                       |       [Save]        |
+||                                                       |       [Load]        |
+||                                                       |                     |
+|+-------------------------------------------------------+                     |
+| Ln 1, Col 27                                                                 |
+'------------------------------------------------------------------------------'
+
+    We click Preview again, and look at that: there is colour!
+
+            --> eog ./img/manual/FirstPictureWithTags-output.png <--
+
+    The program parses the text inside the textbot,  divides the text into small
+sections and  assigns each  section to the  preceding colour tag.  When the user
+clicks Preview,  the program takes these informations and then renders a picture
+based on these informations, as seen in the screenshot above.
+
+            +----------+----------+----------+----------+----------+
+            |Section  1|Section  2|Section  3|Section  4|Section  5|
+            +----------+----------+----------+----------+----------+
+            |   [f0]   |   [0f]   |   [1f]   |   [b4]   |   [f9]   |
+            +----------+----------+----------+----------+----------+
+            |  "I'm"   |   " "    | "really "|"feeling "|  "it!"   |
+            +----------+----------+----------+----------+----------+
+
+_ The colour tags ______________________________________________________________
+
+    In Boris, you add colours by adding colour tags.
+
+    Right before each  section is a  colour tag.  It defines the  foreground and
+background colour  of that section,  from the first character  after the tag all
+the way to the character before the next tag.  The "colour tag" concept is based
+on one of  Polyducks' projects.  Unlike Polyducks' project,  however, Boris lets
+you define not just the foreground  —  but  background colour, allowing for more
+colourful and  impressive  works  (and yes,  I know  there are  other  text mode
+editors that let you do the same thing, but I digress. Besides, my program makes
+it way easier to do).
+
+    Adding a colour tag is fairly simple:  you type a left square bracket,  then
+two  characters   —   which  denote   the  foreground  and   background  colour,
+respectively; then finally a right square bracket.
+
+    Boris assigns  sixteen  colours  of  the  Linux  terminal  palette to  these
+characters, respectively:
+
+ +---------+-------+----------+-----------+-----------+-------+---------+-----+
+ |  Black  |Crimson|Dark green|Dark yellow|Cobalt blue|Violet |Dark cyan|Gray |
+ +---------+-------+----------+-----------+-----------+-------+---------+-----+
+ |    0    |   1   |     2    |     3     |     4     |   5   |    6    |  7  |
+ +---------+-------+----------+-----------+-----------+-------+---------+-----+
+ |Dark gray|  Red  |   Green  |  Yellow   |    Blue   |Magenta|   Cyan  |White|
+ +---------+-------+----------+-----------+-----------+-------+---------+-----+
+ |    8    |   9   |     a    |     b     |     c     |   d   |    e    |  f  |
+ +---------+-------+----------+-----------+-----------+-------+---------+-----+
+
+    Examples:
+
+                       +----------+----------+----------+
+                       |Colour tag|Foreground|Background|
+                       +----------+----------+----------+
+                       |   [f0]   |   White  |   Black  |
+                       +----------+----------+----------+
+                       |   [0f]   |   Black  |   White  |
+                       +----------+----------+----------+
+                       |   [e1]   |   Cyan   | Crimson  |
+                       +----------+----------+----------+
+                       |   [7b]   |   Gray   |  Yellow  |
+                       +----------+----------+----------+
+
+    The colour  tag will not  work if either/both  of the characters  within the
+brackets are uppercased or do not belong to these characters.
+
+  +--------------------------------------------------------------------------+
+  | /!\ Attention!                                                           |
+  | ======================================================================== |
+  |                                                                          |
+  | The first and second character within the brackets denote the foreground |
+  | and background colour,  respectively.  Do not mess that up  —  you don't |
+  | wanna mess up your art!                                                  |
+  |                                                                          |
+  | ======================================================================== |
+  |                                                                          |
+  | If you want to explicitly show the tags and not adding them to your art, |
+  | you need to avoid closing the tags.                                      |
+  |                                                                          |
+  | Let's say you have this text "[90][ab]solutely beautiful!". If you       |
+  | convert it to a Boris picture, it only outputs "solutely beautiful!"     |
+  |                                                                          |
+  | You can alleviate this by inserting a [90] tag inbetween [ab], like      |
+  | this: "[90][ab[90]]solutely beautiful!"                                  |
+  +--------------------------------------------------------------------------+
+
+
+
+
+
+
+
+
