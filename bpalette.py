@@ -8,7 +8,7 @@ def Start(w, palette):
         return out
     
     Palette = palette
-    ColourName = "Black\n\0Crimson\n\0Dark\ngreen\0Dark\nyellow\0Cobalt\nblue\0Violet\n\0Dark\ncyan\0Gray\n\0Light\ngray\0Red\n\0Green\n\0Yellow\n\0Blue\n\0Magenta\n\0Cyan\n\0White\n".split("\0")
+    ColourName = "Black\n\0Crimson\n\0Dark\ngreen\0Dark\nyellow\0Cobalt\nblue\0Violet\n\0Dark\ncyan\0Gray\n\0Dark\ngray\0Red\n\0Green\n\0Yellow\n\0Blue\n\0Magenta\n\0Cyan\n\0White\n".split("\0")
     Sample = SmallImage("img/MeggySpletzer.png", .055)
     
     p = tk.Toplevel(master=w, padx=15, pady=15)
