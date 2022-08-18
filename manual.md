@@ -151,7 +151,7 @@ We click **Preview** again, and look at that: there is colour!
 
 ![](./img/manual/FirstPictureWithTags-output.png)
 
-The program parses the text inside the textbot, divides the text into small sections and assigns each section to the preceding colour tag. When the user clicks **Preview**, the program takes these informations and then renders a picture based on these informations, as seen in the screenshot above.
+The program parses the text inside the textbox, divides the text into small sections and assigns each section to the preceding colour tag. When the user clicks **Preview**, the program takes these informations and then renders a picture based on these informations, as seen in the screenshot above.
 
 | Section 1 | Section 2 | Section 3 | Section 4  | Section 5 |
 |:---------:|:---------:|:---------:|:----------:|:---------:|
@@ -197,6 +197,76 @@ The colour tag will not work if either/both of the characters within the bracket
 > 
 > ![](./img/manual/NoEscapeSeq.png)
 > 
-> You can alleviate this by inserting a `[90]` tag inbetween `[ab]`, like this: `[90][ab`<u>`[90]`</u>`]solutely beautiful!`.
+> You can alleviate this by inserting a `[90]` tag inbetween `[ab]`, like this: `[90][ab`**`[90]`**`]solutely beautiful!`.
 > 
 > ![](./img/manual/WithEscapeSeq.png)
+
+## Saving and loading your artwork
+
+One of the most important part in every software is the ability to save and load something. In *Boris*; you can save your artworks anytime you want, with 3 (or 4) file formats to choose from; and you can load these artworks if you need to modify them a bit.
+
+![](./img/manual/SaveDialog.png)
+
+There are 4 different file formats that *Boris* supports:
+
+* **Ultra Graphics file format** (or **UGF**) are a set of format for *Boris* artworks. They consist of two formats:
+  * `.ugf` — The default UGF format. It comprises the file header, encoded data and a checksum for verification; the former two are encoded to prevent any attempt at compromisation.
+  * `.ugfr` — The "raw" UGF format. Unlike `.ugf`, the data is left unencoded. `.ugfr` files are lighter than `.ugf` files in size, but are left open to compromisation.
+* **JSON** — *The Format That Everybody Knows*. Like the UGF format, it also comprises the file header, encoded data and a checksum. Artworks saved in JSON format are human-readable but are more vulnerable than UGF and UGFR.
+* **Plain text** — Because f\*ck it! Why not?
+
+## Changing global foreground and background colour
+
+*Boris* lets you change the global foreground and background colour. To do that, here's what you need to do: on the menu bar, click **Tools** ➡️ **Change Foreground and Background Colour**. Alternatively, you can press `Ctrl`+`Q` to achieve the same thing, if you don't like doing a little exercise.
+
+![](./img/manual/ChangeFgBgWindow.png)
+
+There are two horizontal scales — one for foreground and one for background. Dragging one of the sliders around the scale changes the preview box on the left. Once you've picked a foreground and background colour, click **Apply** to apply changes.
+
+> ⚠️ **Attention!**
+> 
+> ----
+> 
+> There's a bug, that if you choose a foreground and background colour and click **Cancel** instead of **Apply**, the program still changes the global foreground and background colour to these colours. During the development, I was unable to fix this bug, and Google searches for creating a functional **Cancel** button came up empty. So if anyone want to fix this bug, feel free to contribute! This program is open-source after all!
+> 
+> ![](https://en.meming.world/images/en/4/4a/Modern_Problems_Require_Modern_Solutions.jpg)
+
+## Character table
+
+*Boris* uses Adel Faure's [*jgs5* font](./fonts/jgs5.ttf) for its textbox and previewing artworks. What makes this font unique compared to other monospaced fonts is that it is specifically designed for creating ASCII art.
+
+![](./img/manual/jgs5FullCharTable.png)
+
+The font contains lots of additional characters that can be used to create fine details, and since some of you are using keyboards that do not have some of these characters, I added a character table containing many of these.
+
+![](./img/manual/CharacterTable.png)
+
+To open the character table, click **Tools** ➡️ **Character Table**, or press `F1`. The character table is splitted into three sections: **Basic Latin**, **Additional Characters** and **Glyphs and Semigraphics**. Within each section are the characters. To pick a character, click the button corresponding to that character, and that character will be copied to your clipboard.
+
+# Final Words
+
+Phew. We're finally done!
+
+So, after reading this user manual, I hope that you've learnt how to use *Boris* to create text mode art.
+
+To me, this whole project is undoubtedly stressful — I'd never thought it'd be so godawfully challenging. It took me about a week to write this program and also the user manual in a text editor (no IDE), all on a weak PC with only 2 MB of RAM. You read that right. Not only that, before I completely finished the program and started writing the manual, my PC had to be upgraded from Ubuntu 20.04 to 22.04, thus slowing down the process.
+
+To be honest, I personally don't think *Boris* will become the best text mode editor you can get. I bet there are tons of softwares that can deliver the same stuffs that are as good as, if not, better than *Boris*. I'm not Linus Torvalds, Bjarne Stroustrup, James Gosling, Yukihiro Matsumoto or Guido van Rossum; I'm just an ordinary human, and my programming skill is just a fraction of theirs. I only wrote *Boris* not just because I can, but I wanted to deliver something amazing with all my available skills, to show you what I am truly capable of.
+
+If you have a heart, please cherish this program as much as I do. It is open-source, you can freely do whatever you want with it — modify it, improve it, et cetera. You may share it to your friends and colleagues, but do not claim it yours; you may use it to create art, but don't make NFTs with it.
+
+Thank you for reading this manual. Walk tall, my friend.
+
+*Love — Katsumi Kougen*
+
+----
+
+<center>
+It's only magic,<br>
+Isn't it amazing when you know,<br>
+Every second that you see is<br>
+Twenty-four connected pieces<br>
+Thank you for coming,<br>
+Thank you for staying,<br>
+Thank you for watching the show.
+</center>

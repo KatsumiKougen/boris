@@ -295,7 +295,7 @@ have to add some colour tags, which is my favourite part.
 
             --> eog ./img/manual/FirstPictureWithTags-output.png <--
 
-    The program parses the text inside the textbot,  divides the text into small
+    The program parses the text inside the textbox,  divides the text into small
 sections and  assigns each  section to the  preceding colour tag.  When the user
 clicks Preview,  the program takes these informations and then renders a picture
 based on these informations, as seen in the screenshot above.
@@ -368,17 +368,123 @@ brackets are uppercased or do not belong to these characters.
   | If you want to explicitly show the tags and not adding them to your art, |
   | you need to avoid closing the tags.                                      |
   |                                                                          |
-  | Let's say you have this text "[90][ab]solutely beautiful!". If you       |
+  | Let's  say  you have  this  text  "[90][ab]solutely beautiful!".  If you |
   | convert it to a Boris picture, it only outputs "solutely beautiful!"     |
   |                                                                          |
-  | You can alleviate this by inserting a [90] tag inbetween [ab], like      |
+  | You  can alleviate  this by inserting a  [90] tag  inbetween [ab],  like |
   | this: "[90][ab[90]]solutely beautiful!"                                  |
   +--------------------------------------------------------------------------+
 
+ Saving and loading your artwork
+ ===============================
 
+    One of  the most  important part in  every software  is the  ability to save
+and load  something.  One of the  most important  part in every  software is the
+ability to save and load something. In Boris; you can save your artworks anytime
+you want,  with 3  (or  4)  file formats to choose from;  and you can load these
+artworks if you need to modify them a bit.
 
+    There are 4 different file formats that Boris supports:
 
+  - Ultra Graphics file format (or  UGF) are a set of format for Boris artworks.
+    They consist of two formats:
+      - .ugf  —  The default UGF format.  It comprises the file header,  encoded
+        data and  a checksum  for verification;  the former  two are  encoded to
+        prevent any attempt at compromisation.
+      - .ugfr — The "raw" UGF format.  Unlike .ugf,  the data is left unencoded.
+        .ugfr files  are lighter  than .ugf files in size,  but are left open to
+        compromisation.
+  - JSON  —  The Format  That Everybody  Knows.  Like the  UGF format,  it  also
+    comprises the file header,  encoded data  and a checksum.  Artworks saved in
+    JSON format are human-readable but are more vulnerable than UGF and UGFR.
+  - Plain text — Because f*ck it! Why not?
 
+ Changing global foreground and background colour
+ ================================================
 
+    Boris lets you  change the  global foreground  and background colour.  To do
+that,  here's what you  need to do:  on the  menu bar,  click Tools  -->  Change
+Foreground and Background Colour. Alternatively, you can press Ctrl+Q to achieve
+the same thing, if you don't like doing a little exercise.
 
+    There are two horizontal scales — one for foreground and one for background.
+Dragging one of  the sliders  around the  scale changes the  preview box  on the
+left.  Once you've picked  a foreground and  background colour,  click Apply  to
+apply changes.
+
+  +--------------------------------------------------------------------------+
+  | /!\ Attention!                                                           |
+  | ======================================================================== |
+  |                                                                          |
+  | There's a bug, that if you choose a foreground and background colour and |
+  | click Cancel instead of Apply, the program still changes the global      |
+  | foreground and background colour to these colours. During the            |
+  | development, I was unable to fix this bug, and Google searches for       |
+  | creating a functional Cancel button came up empty. So if anyone want to  |
+  | fix this bug, feel free to contribute! This program is open-source after |
+  | all!                                                                     |
+  +--------------------------------------------------------------------------+
+
+ Character table
+ ===============
+
+    Boris uses Adel Faure's  jgs5 font for  its textbox and previewing artworks.
+What makes this font  unique compared  to other monospaced fonts  is that it is
+specifically designed for creating ASCII art.
+
+    The font contains lots of additional  characters that can be used to create
+fine details,  and since some of you are using  keyboards that do not have some
+of these characters, I added a character table containing many of these.
+
+    To open the character table, click Tools  -->  Character Table, or press F1.
+The character table is splitted into three sections: "Basic Latin", "Additional
+Characters"  and  "Glyphs  and  Semigraphics".  Within  each  section  are  the
+characters.  To  pick  a  character,  click the  button  corresponding  to that
+character, and that character will be copied to your clipboard.
+
+ ___              _
+|    '             |      |     |            |
+|--  | |/"|  /"|   |      |  ^  | /"\ |/"  /"| /"\
+|    | |  | |  |   |      | /| /  | | |   |  | '-.
+|    | |  |  \_^_   \     \/ \/   \_/ |    \_| \_/
+==================================================
+
+    Phew. We're finally done!
+
+    So, after reading  this user  manual,  I hope that you've  learnt how to use
+Boris to create text mode art.
+
+    To me, this whole project is undoubtedly stressful —  I'd never thought it'd
+be so godawfully challenging.  It took me about a week to write this program and
+also the user manual in a text editor (no IDE),  all on a weak PC with only 2 MB
+of RAM.  You read that right.  Not only that,  before I completely  finished the
+program and started  writing the manual,  my PC  had to be  upgraded from Ubuntu
+20.04 to 22.04, thus slowing down the process.
+
+    To be honest,  I personally don't think Boris will become the best text mode
+editor you can get.  I bet there are tons of softwares that can deliver the same
+stuffs that are as good as, if not,  better than Boris.  I'm not Linus Torvalds,
+Bjarne Stroustrup,  James Gosling,  Yukihiro Matsumoto or Guido van Rossum;  I'm
+just an ordinary human,  and my programming skill  is just a fraction of theirs.
+I only wrote Boris  not just  because I can,  but I wanted to  deliver something
+amazing with all my available skills, to show you what I am truly capable of.
+
+    If you have  a heart,  please cherish  this program as  much as I do.  It is
+open-source,  you can freely do whatever you want with it  —  modify it, improve
+it, et cetera. You may share it to your friends and colleagues, but do not claim
+it yours; you may use it to create art, but don't make NFTs with it.
+
+    Thank you for reading this manual. Walk tall, my friend.
+
+    Love — Katsumi Kougen
+
+ ------------------------------------------------------------------------------
+
+            It's only magic,
+                Isn't it amazing when you know,
+                    Every second that you see is
+                        Twenty-four connected pieces
+                            Thank you for coming,
+                                Thank you for staying,
+                                    Thank you for watching the show.
 
