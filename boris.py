@@ -16,7 +16,7 @@
 import sys, re
 import bpreview as bp, bpalette as bpa, bchangebg as bg, bchartbl as bt, bcredits as bc, bfiledialog as bf, bfilehndl as bfh, bmanual as bm, bicon
 
-DefaultPalette = "101117 b81c11 28bd37 c9a11e 374fa6 9c48ab 54aac7 818791 373b4a f54640 4ce060 f7d454 3156eb b56fed 5cd3e0 d1d3e0".split()
+DefaultPalette = "101117 b81c11 28bd37 c9a11e 374fa6 9c48ab 54aac7 818791 373b4a f54640 4ce060 f7d454 3156eb b56fed 3bd2e3 edf0f7".split()
 
 print(
     "\n"
