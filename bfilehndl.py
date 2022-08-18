@@ -22,6 +22,8 @@ class FileHandler:
                 self.Output = self.__LoadUGF(object_)
             case ["load" | "LOAD" | "Load", "ugfr"]:
                 self.Output = self.__LoadUGF(object_, True)
+            case ["load" | "LOAD" | "Load", "json"]:
+                self.Output = self.__LoadJSON(object_)
             case ["load" | "LOAD" | "Load", _]:
                 self.Output = open(object_, "r").read()
     
