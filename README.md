@@ -22,7 +22,7 @@ Unlike the traditional go-to software for creating ASCII art, [Windows Notepad](
 
 *Boris* is designed to be simple and straightforward for users. But of course, one would still need a user manual.
 
-You can find the user manual [here](./manual.md)
+You can find the user manual [here](./manual.md).
 
 # Created by...
 
